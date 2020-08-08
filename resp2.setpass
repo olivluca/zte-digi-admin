@@ -1,0 +1,15 @@
+<SOAP-ENV:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cwmp="urn:dslforum-org:cwmp-1-0" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SOAP-ENV:Header>
+<cwmp:ID SOAP:mustUnderstand="1">1</cwmp:ID>
+<cwmp:NoMoreRequest>0</cwmp:NoMoreRequest>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<cwmp:SetParameterValues>
+<ParameterList>
+<ParameterValueStruct><Name>InternetGatewayDevice.DeviceInfo.X_ZTE-COM_AdminAccount.Password</Name><Value xsi:type="xsd:string">xxxxxxxxxxx</Value></ParameterValueStruct>
+<ParameterValueStruct><Name>InternetGatewayDevice.DeviceInfo.X_ZTE-COM_AdminAccount.Enable</Name><Value xsi:type="xsd:boolean">1</Value></ParameterValueStruct>
+</ParameterList>
+<ParameterKey/>
+</cwmp:SetParameterValues>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+eval $HTTP_COOKIE
+if [ -z $session ] ; then
+   session=$(date +'%F-%T')
+   mkdir /tmp/acs/$session
+fi  
+
+if [ -f /tmp/acs/${session}/status ] ; then
+  status=$(cat /tmp/acs/${session}/status)
+else
+  status=1
+fi  
+
+if [ ! -f /etc/lighttpd/resp${status} ] ; then
+  exit
+fi
+  
+echo "Content-Type: text/xml"
+[ -n "$session" ] && echo "Set-Cookie: session=$session"
+echo "" 
+cat /dev/stdin > /tmp/acs/${session}/req${status}
+cat /etc/lighttpd/resp${status}
+
+status=$(($status+1))
+echo $status > /tmp/acs/${session}/status
+
